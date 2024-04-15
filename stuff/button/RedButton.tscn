@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://iqh2ymrqbp7k"]
+
+[ext_resource type="Script" path="res://stuff/button/RedButton.gd" id="1_q7e32"]
+[ext_resource type="Texture2D" uid="uid://du3p5ntb0m34d" path="res://stuff/button/red_button.png" id="2_op8od"]
+
+[node name="RedButton" type="Node2D"]
+z_index = -5
+script = ExtResource("1_q7e32")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_op8od")
+hframes = 2

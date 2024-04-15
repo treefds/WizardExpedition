@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://djm84811ldttl"
+path="res://.godot/imported/dialog_bridge.dialogue-bd45571e899c0d4079cd70a647dd4480.tres"
+
+[deps]
+
+source_file="res://resources/dialogs/dialog_bridge.dialogue"
+dest_files=["res://.godot/imported/dialog_bridge.dialogue-bd45571e899c0d4079cd70a647dd4480.tres"]
+
+[params]
+
+defaults=true

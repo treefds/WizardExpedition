@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://y7eoa8cqyjl"
+path="res://.godot/imported/dialog_sleepy.dialogue-4c8682ce00422b69b8a0d5cbb53aa22b.tres"
+
+[deps]
+
+source_file="res://resources/dialogs/dialog_sleepy.dialogue"
+dest_files=["res://.godot/imported/dialog_sleepy.dialogue-4c8682ce00422b69b8a0d5cbb53aa22b.tres"]
+
+[params]
+
+defaults=true

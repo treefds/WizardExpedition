@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://d163pyje2x4nr"]
+
+[ext_resource type="Script" path="res://stuff/PushableStuff.gd" id="1_qu0ux"]
+[ext_resource type="Texture2D" uid="uid://bowwx7f7se61h" path="res://stuff/rock/vase.png" id="2_krwel"]
+
+[node name="Vase" type="Node2D"]
+script = ExtResource("1_qu0ux")
+strength = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_krwel")

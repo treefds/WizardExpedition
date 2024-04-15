@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cq10xrx1c0no7"
+path="res://.godot/imported/dialog_obtain_staff.dialogue-6f9e8e1e59b44c2dc119cdfe488a2fd3.tres"
+
+[deps]
+
+source_file="res://resources/dialogs/dialog_obtain_staff.dialogue"
+dest_files=["res://.godot/imported/dialog_obtain_staff.dialogue-6f9e8e1e59b44c2dc119cdfe488a2fd3.tres"]
+
+[params]
+
+defaults=true

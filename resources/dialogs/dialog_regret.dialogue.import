@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://deno66edkwgfv"
+path="res://.godot/imported/dialog_regret.dialogue-23fcecab7f8cb92db8ad7d923a079c66.tres"
+
+[deps]
+
+source_file="res://resources/dialogs/dialog_regret.dialogue"
+dest_files=["res://.godot/imported/dialog_regret.dialogue-23fcecab7f8cb92db8ad7d923a079c66.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://crwlsxil21pd6"]
+
+[ext_resource type="Script" path="res://stuff/PushableStuff.gd" id="1_a2m4x"]
+[ext_resource type="Texture2D" uid="uid://ba5buw0gsia1c" path="res://stuff/rock/bigrock.png" id="2_gkn7q"]
+
+[node name="Smallrock2" type="Node2D"]
+script = ExtResource("1_a2m4x")
+strength = 0
+weight = 3
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_gkn7q")

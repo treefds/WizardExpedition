@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://w5ym12m5rqdo"]
+
+[ext_resource type="Script" path="res://stuff/PushableStuff.gd" id="1_6rwvk"]
+[ext_resource type="Texture2D" uid="uid://7o6jkk4qf4mm" path="res://stuff/rock/thebox.png" id="2_avhim"]
+
+[node name="Smallrock" type="Node2D"]
+script = ExtResource("1_6rwvk")
+tag = "smallbox"
+strength = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_avhim")

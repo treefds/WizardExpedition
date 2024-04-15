@@ -1,0 +1,271 @@
+[gd_scene load_steps=21 format=3 uid="uid://m54bvh24tffs"]
+
+[ext_resource type="Script" path="res://guis/BookGUI.gd" id="1_15l5e"]
+[ext_resource type="Texture2D" uid="uid://ct6ap3pnkvt8" path="res://guis/page_01.png" id="1_hel8e"]
+[ext_resource type="Texture2D" uid="uid://xnb25xmyf0vi" path="res://guis/bookgraph/graph_hallow.png" id="2_nufye"]
+[ext_resource type="FontFile" uid="uid://dr5hbihcvdbr1" path="res://resources/MatchupPro.ttf" id="3_ow4u3"]
+[ext_resource type="Texture2D" uid="uid://xc26tim3bq2u" path="res://guis/bookgraph/graph_distance.png" id="4_0rfmb"]
+[ext_resource type="Texture2D" uid="uid://db3wpa550pj1n" path="res://guis/bookgraph/graph_summon.png" id="5_u1abh"]
+[ext_resource type="Texture2D" uid="uid://qsnp7k6wjftg" path="res://guis/bookgraph/graph_spawned.png" id="6_bb58a"]
+[ext_resource type="Texture2D" uid="uid://dpd35ccbs4ov1" path="res://summons/grass_golem/grass_golem.png" id="7_6crl2"]
+[ext_resource type="Texture2D" uid="uid://btlgasltmp6jg" path="res://guis/bookgraph/graph_grass.png" id="8_3n0o5"]
+[ext_resource type="Texture2D" uid="uid://o226io4mh6nb" path="res://summons/stone_golem/stone_golem.png" id="9_md728"]
+[ext_resource type="Texture2D" uid="uid://cg2jia6432q6o" path="res://guis/bookgraph/graph_rock.png" id="10_tefix"]
+[ext_resource type="Texture2D" uid="uid://cn116j1uq5yn1" path="res://guis/bookgraph/buttons/book_buttons3.png" id="11_mxtfo"]
+[ext_resource type="Texture2D" uid="uid://6isopkv6bb0x" path="res://guis/bookgraph/buttons/book_buttons6.png" id="12_nnllb"]
+[ext_resource type="Texture2D" uid="uid://bbo28ibme4lpu" path="res://guis/bookgraph/buttons/book_buttons9.png" id="13_smkbp"]
+[ext_resource type="Texture2D" uid="uid://d1krev353rv37" path="res://guis/bookgraph/buttons/book_buttons1.png" id="15_fmt3f"]
+[ext_resource type="Texture2D" uid="uid://ck2bi1x5rw54p" path="res://guis/bookgraph/buttons/book_buttons7.png" id="16_e0aqk"]
+[ext_resource type="Texture2D" uid="uid://cy2g2vcuvq5t1" path="res://guis/bookgraph/buttons/book_buttons4.png" id="17_i6fcu"]
+[ext_resource type="Texture2D" uid="uid://d37ta7o4pwr7v" path="res://guis/bookgraph/buttons/book_buttons2.png" id="18_53k3k"]
+[ext_resource type="Texture2D" uid="uid://cmloqx7egbe5g" path="res://guis/bookgraph/buttons/book_buttons8.png" id="19_qk6bo"]
+[ext_resource type="Texture2D" uid="uid://c2oh6ujqx3rc8" path="res://guis/bookgraph/buttons/book_buttons5.png" id="20_3c8jb"]
+
+[node name="BookGUI" type="Control"]
+z_index = 1000
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_15l5e")
+
+[node name="Bg" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1440, 600)
+scale = Vector2(2, 2)
+texture = ExtResource("1_hel8e")
+
+[node name="Page1" type="Node2D" parent="."]
+
+[node name="GraphHallow" type="Sprite2D" parent="Page1"]
+texture_filter = 1
+position = Vector2(1552, 434)
+scale = Vector2(2, 2)
+texture = ExtResource("2_nufye")
+
+[node name="Label" type="Label" parent="Page1"]
+offset_left = 1288.0
+offset_top = 613.0
+offset_right = 1804.0
+offset_bottom = 757.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ow4u3")
+theme_override_font_sizes/font_size = 64
+text = "A Beginner's Guide to
+Summoning"
+horizontal_alignment = 1
+
+[node name="Page2" type="Node2D" parent="."]
+visible = false
+
+[node name="Label" type="Label" parent="Page2"]
+offset_left = 1293.0
+offset_top = 141.0
+offset_right = 1809.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ow4u3")
+theme_override_font_sizes/font_size = 64
+text = "How to Summon"
+horizontal_alignment = 1
+
+[node name="Hint1" type="Label" parent="Page2"]
+offset_left = 1278.0
+offset_top = 306.0
+offset_right = 1648.0
+offset_bottom = 388.0
+theme_override_colors/font_color = Color(0.32549, 0.368627, 0.752941, 1)
+theme_override_fonts/font = ExtResource("3_ow4u3")
+theme_override_font_sizes/font_size = 48
+text = "1. Find somewhere
+   empty and near"
+
+[node name="Label3" type="Label" parent="Page2"]
+offset_left = 1361.0
+offset_top = 213.0
+offset_right = 1731.0
+offset_bottom = 293.0
+theme_override_colors/font_color = Color(0.0509804, 0.129412, 0.25098, 1)
+theme_override_fonts/font = ExtResource("3_ow4u3")
+theme_override_font_sizes/font_size = 32
+text = "~ it's really easy!!! ~"
+horizontal_alignment = 1
+
+[node name="Hint2" type="Label" parent="Page2"]
+offset_left = 1512.0
+offset_top = 493.0
+offset_right = 1892.0
+offset_bottom = 575.0
+theme_override_colors/font_color = Color(0.164706, 0.313726, 0.564706, 1)
+theme_override_fonts/font = ExtResource("3_ow4u3")
+theme_override_font_sizes/font_size = 48
+text = "2. Hold your Staff 
+  (press SPACE)"
+
+[node name="Hint3" type="Label" parent="Page2"]
+offset_left = 1289.0
+offset_top = 650.0
+offset_right = 1659.0
+offset_bottom = 732.0
+theme_override_colors/font_color = Color(0.458824, 0.152941, 0.552941, 1)
+theme_override_fonts/font = ExtResource("3_ow4u3")
+theme_override_font_sizes/font_size = 48
+text = "3. Summon it!! 
+  (Left-Click)"
+
+[node name="GraphDistance" type="Sprite2D" parent="Page2"]
+position = Vector2(1740, 346)
+texture = ExtResource("4_0rfmb")
+
+[node name="GraphSummon" type="Sprite2D" parent="Page2"]
+position = Vector2(1370, 528)
+texture = ExtResource("5_u1abh")
+
+[node name="GraphSpawned" type="Sprite2D" parent="Page2"]
+position = Vector2(1730, 713)
+texture = ExtResource("6_bb58a")
+
+[node name="Hint4" type="Label" parent="Page2"]
+offset_left = 1278.0
+offset_top = 815.0
+offset_right = 1833.0
+offset_bottom = 897.0
+theme_override_colors/font_color = Color(0.286275, 0.317647, 0.411765, 1)
+theme_override_fonts/font = ExtResource("3_ow4u3")
+theme_override_font_sizes/font_size = 48
+text = "P.S. You can retrieve the golem
+you summoned by *pushing* it. "
+horizontal_alignment = 1
+
+[node name="Page3" type="Node2D" parent="."]
+visible = false
+
+[node name="Label" type="Label" parent="Page3"]
+offset_left = 1293.0
+offset_top = 141.0
+offset_right = 1809.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ow4u3")
+theme_override_font_sizes/font_size = 64
+text = "Grass Golem"
+horizontal_alignment = 1
+
+[node name="GrassGolem" type="Sprite2D" parent="Page3"]
+position = Vector2(1552, 308)
+scale = Vector2(4, 4)
+texture = ExtResource("7_6crl2")
+
+[node name="Hint" type="Label" parent="Page3"]
+offset_left = 1312.0
+offset_top = 430.0
+offset_right = 1845.0
+offset_bottom = 512.0
+theme_override_colors/font_color = Color(0.266667, 0.34902, 0.2, 1)
+theme_override_fonts/font = ExtResource("3_ow4u3")
+theme_override_font_sizes/font_size = 48
+text = "Summons on Grass
+           or next to flowerpot
+
+Cost 1 energy & the Plant"
+
+[node name="Hint2" type="Label" parent="Page3"]
+offset_left = 1288.0
+offset_top = 759.0
+offset_right = 1843.0
+offset_bottom = 923.0
+theme_override_colors/font_color = Color(0.356863, 0.305882, 0.286275, 1)
+theme_override_fonts/font = ExtResource("3_ow4u3")
+theme_override_font_sizes/font_size = 48
+text = "Properties: 
+- very weak (push only 1 rock)
+- can walk on spikes
+- get sleepy after work"
+
+[node name="GraphGrass" type="Sprite2D" parent="Page3/Hint2"]
+position = Vector2(259, -78)
+texture = ExtResource("8_3n0o5")
+
+[node name="Page4" type="Node2D" parent="."]
+visible = false
+
+[node name="Label" type="Label" parent="Page4"]
+offset_left = 1293.0
+offset_top = 141.0
+offset_right = 1809.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ow4u3")
+theme_override_font_sizes/font_size = 64
+text = "Stone Golem"
+horizontal_alignment = 1
+
+[node name="StoneGolem" type="Sprite2D" parent="Page4"]
+position = Vector2(1552, 308)
+scale = Vector2(4, 4)
+texture = ExtResource("9_md728")
+hframes = 5
+
+[node name="Hint" type="Label" parent="Page4"]
+offset_left = 1275.0
+offset_top = 456.0
+offset_right = 1827.0
+offset_bottom = 579.0
+theme_override_colors/font_color = Color(0.266667, 0.34902, 0.2, 1)
+theme_override_fonts/font = ExtResource("3_ow4u3")
+theme_override_font_sizes/font_size = 48
+text = "Summons between 2 small rocks
+
+Costs 2 energy 
+  and the rocks"
+
+[node name="Hint2" type="Label" parent="Page4"]
+offset_left = 1281.0
+offset_top = 713.0
+offset_right = 1836.0
+offset_bottom = 918.0
+theme_override_colors/font_color = Color(0.356863, 0.305882, 0.286275, 1)
+theme_override_fonts/font = ExtResource("3_ow4u3")
+theme_override_font_sizes/font_size = 48
+text = "Properties: 
+- very strong: pushes big rock
+  - or 3 small rocks
+- sleeps after three pushes
+- leaves a big rock when
+  retrieved"
+
+[node name="GraphRock" type="Sprite2D" parent="Page4"]
+position = Vector2(1700, 608)
+texture = ExtResource("10_tefix")
+
+[node name="ExitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1192.0
+offset_top = 50.0
+offset_right = 1305.0
+offset_bottom = 159.0
+texture_normal = ExtResource("11_mxtfo")
+texture_pressed = ExtResource("13_smkbp")
+texture_hover = ExtResource("12_nnllb")
+
+[node name="LeftButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1185.0
+offset_top = 929.0
+offset_right = 1298.0
+offset_bottom = 1038.0
+texture_normal = ExtResource("15_fmt3f")
+texture_pressed = ExtResource("16_e0aqk")
+texture_hover = ExtResource("17_i6fcu")
+
+[node name="RightButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1806.0
+offset_top = 923.0
+offset_right = 1919.0
+offset_bottom = 1032.0
+texture_normal = ExtResource("18_53k3k")
+texture_pressed = ExtResource("19_qk6bo")
+texture_hover = ExtResource("20_3c8jb")

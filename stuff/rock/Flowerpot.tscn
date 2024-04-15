@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://l43rw0rnojkt"]
+
+[ext_resource type="Script" path="res://stuff/rock/Flowerpot.gd" id="1_xy318"]
+[ext_resource type="Texture2D" uid="uid://b0k7if33y67v3" path="res://stuff/rock/flowerpot.png" id="2_2qcwh"]
+
+[node name="Flowerpot" type="Node2D"]
+script = ExtResource("1_xy318")
+tag = "smallrock"
+strength = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2qcwh")
+hframes = 3

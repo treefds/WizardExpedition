@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://dempw4qe1woup"
+path="res://.godot/imported/dialog_obtain_powerup.dialogue-da4229eaf6c653e5d5d551525f75307b.tres"
+
+[deps]
+
+source_file="res://resources/dialogs/dialog_obtain_powerup.dialogue"
+dest_files=["res://.godot/imported/dialog_obtain_powerup.dialogue-da4229eaf6c653e5d5d551525f75307b.tres"]
+
+[params]
+
+defaults=true

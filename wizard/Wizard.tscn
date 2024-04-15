@@ -1,0 +1,128 @@
+[gd_scene load_steps=13 format=3 uid="uid://bb56fpwuyre2m"]
+
+[ext_resource type="Script" path="res://wizard/Wizard.gd" id="1_80t6j"]
+[ext_resource type="Texture2D" uid="uid://c6cxhec1vxhxp" path="res://wizard/wizard_blobbies.png" id="2_wyhbn"]
+[ext_resource type="Texture2D" uid="uid://bhn54a1ulyvl4" path="res://shaders/particle_pixel.png" id="3_ajh82"]
+[ext_resource type="Texture2D" uid="uid://hs4wj4jqs0q8" path="res://stuff/select_icon.png" id="4_ca7vw"]
+[ext_resource type="AudioStream" uid="uid://bks1ahlgmuvp1" path="res://resources/sound/movement.mp3" id="5_esrr3"]
+[ext_resource type="AudioStream" uid="uid://cqbqk4eujfntq" path="res://resources/sound/push.mp3" id="6_6a2el"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enfnh"]
+size = Vector2(30, 30)
+
+[sub_resource type="Animation" id="Animation_vbw05"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_hg36a"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.96, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ab7qm"]
+_data = {
+"RESET": SubResource("Animation_vbw05"),
+"idle": SubResource("Animation_hg36a")
+}
+
+[sub_resource type="Curve" id="Curve_yr4od"]
+_data = [Vector2(0.194128, 0.955276), 0.0, 0.0, 0, 0, Vector2(0.858229, 0.425885), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_006pi"]
+offsets = PackedFloat32Array(0, 0.708609, 1)
+colors = PackedColorArray(1, 1, 1, 0.819608, 1, 1, 1, 0.552941, 1, 1, 1, 0)
+
+[node name="Wizard" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_80t6j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wyhbn")
+hframes = 4
+vframes = 2
+
+[node name="SelectIcon" type="Sprite2D" parent="Sprite2D"]
+z_index = 20
+position = Vector2(0, -40)
+texture = ExtResource("4_ca7vw")
+hframes = 4
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_enfnh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ab7qm")
+}
+
+[node name="SummoningParticle" type="CPUParticles2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(0, 26)
+amount = 18
+texture = ExtResource("3_ajh82")
+emission_shape = 3
+emission_rect_extents = Vector2(24, 2)
+direction = Vector2(-1, 0)
+spread = 90.0
+gravity = Vector2(0, -60)
+initial_velocity_max = 12.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+radial_accel_max = 22.22
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_yr4od")
+color = Color(0.572549, 0.113725, 0.121569, 0.384314)
+color_ramp = SubResource("Gradient_006pi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_esrr3")
+
+[node name="AudioStreamPlayerPush" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_6a2el")

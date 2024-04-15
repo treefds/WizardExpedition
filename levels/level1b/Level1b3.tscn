@@ -1,0 +1,300 @@
+[gd_scene load_steps=16 format=3 uid="uid://dlrmknpbgfilh"]
+
+[ext_resource type="Script" path="res://levels/Level.gd" id="1_lgpuc"]
+[ext_resource type="Texture2D" uid="uid://c4w5h7hsqfx4j" path="res://levels/test_level_bg.png" id="2_n36f4"]
+[ext_resource type="Texture2D" uid="uid://becpy2dv1m2xk" path="res://tiles/tileset_garden.png" id="3_6qojk"]
+[ext_resource type="Script" path="res://levels/LevelTileMap.gd" id="4_f76jk"]
+[ext_resource type="PackedScene" uid="uid://bb56fpwuyre2m" path="res://wizard/Wizard.tscn" id="5_gjres"]
+[ext_resource type="PackedScene" uid="uid://31g1t388xr5u" path="res://stuff/ExitEffect.tscn" id="6_gab5q"]
+[ext_resource type="Script" path="res://stuff/PushableStuff.gd" id="7_jxqc8"]
+[ext_resource type="Texture2D" uid="uid://ba5buw0gsia1c" path="res://stuff/rock/bigrock.png" id="8_qnkb0"]
+[ext_resource type="Texture2D" uid="uid://vcljkwotns0b" path="res://stuff/rock/rock.png" id="9_83hab"]
+[ext_resource type="PackedScene" uid="uid://c7rjgo3yx3iwr" path="res://stuff/rock/Smallrock.tscn" id="10_nfge0"]
+[ext_resource type="PackedScene" uid="uid://bvqjjsntgdaa1" path="res://stuff/spike/Spike.tscn" id="11_ajnme"]
+[ext_resource type="Texture2D" uid="uid://wpgovmp82d4o" path="res://tiles/deco/white_flowers.png" id="12_acmob"]
+[ext_resource type="Texture2D" uid="uid://ddd8ui43qsvke" path="res://tiles/deco/orange_flower.png" id="13_o1akx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e7bes"]
+resource_name = "Garden"
+texture = ExtResource("3_6qojk")
+texture_region_size = Vector2i(60, 60)
+0:0/0 = 0
+0:0/0/custom_data_0 = 1
+1:0/0 = 0
+1:0/0/custom_data_0 = 1
+2:0/0 = 0
+2:0/0/custom_data_0 = 1
+3:0/0 = 0
+3:0/0/custom_data_0 = 1
+0:1/0 = 0
+0:1/0/custom_data_0 = 1
+1:1/0 = 0
+1:1/0/custom_data_0 = 1
+3:1/0 = 0
+3:1/0/custom_data_0 = 1
+0:2/0 = 0
+0:2/0/custom_data_0 = 1
+1:2/0 = 0
+1:2/0/custom_data_0 = 1
+2:2/0 = 0
+2:2/0/custom_data_0 = 1
+3:2/0 = 0
+3:2/0/custom_data_0 = 1
+0:3/0 = 0
+0:3/0/custom_data_0 = -1
+1:3/0 = 0
+1:3/0/custom_data_0 = -1
+1:3/0/custom_data_1 = &"grass"
+2:3/0 = 0
+3:3/0 = 0
+2:1/0 = 0
+2:1/0/custom_data_0 = 1
+4:0/0 = 0
+4:0/0/custom_data_0 = 1
+5:0/0 = 0
+5:0/0/custom_data_0 = 1
+6:0/0 = 0
+6:0/0/custom_data_0 = 1
+7:0/0 = 0
+7:0/0/custom_data_0 = 1
+8:0/0 = 0
+8:0/0/custom_data_0 = 1
+9:0/0 = 0
+9:0/0/custom_data_0 = 1
+4:1/0 = 0
+4:1/0/custom_data_0 = 1
+5:1/0 = 0
+5:1/0/custom_data_0 = 1
+6:1/0 = 0
+6:1/0/custom_data_0 = 1
+7:1/0 = 0
+7:1/0/custom_data_0 = 1
+8:1/0 = 0
+8:1/0/custom_data_0 = 1
+9:1/0 = 0
+9:1/0/custom_data_0 = 1
+4:2/0 = 0
+4:2/0/custom_data_0 = 1
+5:2/0 = 0
+5:2/0/custom_data_0 = 1
+6:2/0 = 0
+6:2/0/custom_data_0 = 1
+7:2/0 = 0
+7:2/0/custom_data_0 = 1
+8:2/0 = 0
+8:2/0/custom_data_0 = 1
+9:2/0 = 0
+9:2/0/custom_data_0 = 1
+0:4/0 = 0
+1:4/0 = 0
+1:4/0/custom_data_1 = &"grass"
+0:5/0 = 0
+1:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_h8rto"]
+tile_size = Vector2i(60, 60)
+custom_data_layer_0/name = "mode"
+custom_data_layer_0/type = 2
+custom_data_layer_1/name = "meta"
+custom_data_layer_1/type = 21
+sources/1 = SubResource("TileSetAtlasSource_e7bes")
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_lgpuc")
+next_level_path = "res://levels/level1c/Level1c1.tscn"
+level_title = "Garden Maze"
+level_number = 123
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 300)
+
+[node name="Bgimg" type="Sprite2D" parent="."]
+z_index = -1000
+texture = ExtResource("2_n36f4")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_h8rto")
+format = 2
+layer_0/name = "env"
+layer_0/tile_data = PackedInt32Array(589824, 262145, 1, 589825, 262145, 1, 589826, 262145, 1, 589827, 262145, 1, 589828, 262145, 1, 589829, 262145, 1, 589830, 262145, 1, 589831, 262145, 1, 589832, 262145, 1, 589833, 262145, 1, 589834, 262145, 1, 589835, 262145, 1, 589836, 262145, 1, 589837, 262145, 1, 589838, 262145, 1, 589839, 262145, 1, 524288, 262145, 1, 524289, 262145, 1, 524290, 262145, 1, 524291, 262145, 1, 524292, 262145, 1, 524293, 262145, 1, 524294, 262145, 1, 524295, 262145, 1, 524296, 262145, 1, 524297, 262145, 1, 524298, 262145, 1, 524299, 262145, 1, 524300, 262145, 1, 524301, 262145, 1, 524302, 262145, 1, 524303, 262145, 1, 0, 262145, 1, 1, 262145, 1, 2, 262145, 1, 3, 262145, 1, 4, 262145, 1, 5, 262145, 1, 6, 262145, 1, 7, 262145, 1, 8, 262145, 1, 9, 262145, 1, 10, 262145, 1, 11, 262145, 1, 12, 262145, 1, 13, 262145, 1, 14, 262145, 1, 15, 262145, 1, 65551, 262145, 1, 131087, 262145, 1, 196623, 458753, 2, 327695, 458753, 0, 393231, 262145, 1, 458767, 262145, 1, 65536, 262145, 1, 65537, 196609, 0, 65538, 262145, 0, 65539, 262145, 0, 65540, 262145, 0, 65541, 262145, 0, 65542, 262145, 0, 65543, 262145, 0, 65544, 262145, 0, 65545, 262145, 0, 65546, 262145, 0, 65547, 262145, 0, 65548, 262145, 0, 65549, 327681, 0, 65550, 262145, 1, 458752, 262145, 1, 458753, 196609, 2, 458754, 262145, 2, 458755, 262145, 2, 458756, 262145, 2, 458757, 262145, 2, 458758, 262145, 2, 458759, 262145, 2, 458760, 262145, 2, 458761, 262145, 2, 458762, 262145, 2, 458763, 262145, 2, 458764, 262145, 2, 458765, 327681, 2, 458766, 262145, 1, 131086, 327681, 0, 196622, 393217, 2, 327694, 393217, 0, 393230, 327681, 2, 131085, 393217, 2, 393229, 393217, 0, 196619, 65537, 1, 327691, 65537, 1, 196617, 65537, 1, 196615, 65537, 1, 196613, 65537, 1, 327685, 65537, 1, 327687, 65537, 1, 327689, 65537, 1, 196611, 65537, 1, 327683, 65537, 1, 131072, 262145, 1, 196608, 458753, 2, 131073, 196609, 1, 196609, 524289, 2, 327680, 458753, 0, 393216, 262145, 1, 327681, 524289, 0, 393217, 524289, 1, 327679, 262145, 1, 262160, 262145, 1)
+layer_1/name = "ground"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = -100
+layer_1/tile_data = PackedInt32Array(0, 65537, 3, 65536, 65537, 3, 131072, 65537, 3, 196608, 65537, 3, 262144, 65537, 3, 327680, 65537, 3, 393216, 65537, 3, 458752, 65537, 3, 524288, 65537, 3, 589824, 65537, 3, 1, 65537, 3, 65537, 65537, 3, 131073, 65537, 3, 196609, 65537, 3, 262145, 65537, 3, 327681, 65537, 3, 393217, 65537, 3, 458753, 65537, 3, 524289, 65537, 3, 589825, 65537, 3, 2, 65537, 3, 65538, 65537, 3, 131074, 65537, 3, 196610, 65537, 3, 262146, 65537, 3, 327682, 65537, 3, 393218, 65537, 3, 458754, 65537, 3, 524290, 65537, 3, 589826, 65537, 3, 3, 65537, 3, 65539, 65537, 3, 131075, 65537, 3, 196611, 65537, 3, 262147, 65537, 3, 327683, 65537, 3, 393219, 65537, 3, 458755, 65537, 3, 524291, 65537, 3, 589827, 65537, 3, 4, 65537, 3, 65540, 65537, 3, 131076, 65537, 3, 196612, 65537, 3, 262148, 65537, 3, 327684, 65537, 3, 393220, 65537, 3, 458756, 65537, 3, 524292, 65537, 3, 589828, 65537, 3, 5, 65537, 3, 65541, 65537, 3, 131077, 65537, 3, 196613, 65537, 3, 262149, 65537, 3, 327685, 65537, 3, 393221, 65537, 3, 458757, 65537, 3, 524293, 65537, 3, 589829, 65537, 3, 6, 65537, 3, 65542, 65537, 3, 131078, 65537, 3, 196614, 65537, 3, 262150, 65537, 3, 327686, 65537, 3, 393222, 65537, 3, 458758, 65537, 3, 524294, 65537, 3, 589830, 65537, 3, 7, 65537, 3, 65543, 65537, 3, 131079, 65537, 3, 196615, 65537, 3, 262151, 65537, 3, 327687, 65537, 3, 393223, 65537, 3, 458759, 65537, 3, 524295, 65537, 3, 589831, 65537, 3, 8, 65537, 3, 65544, 65537, 3, 131080, 65537, 3, 196616, 65537, 3, 262152, 65537, 3, 327688, 65537, 3, 393224, 65537, 3, 458760, 65537, 3, 524296, 65537, 3, 589832, 65537, 3, 9, 65537, 3, 65545, 65537, 3, 131081, 65537, 3, 196617, 65537, 3, 262153, 65537, 3, 327689, 65537, 3, 393225, 65537, 3, 458761, 65537, 3, 524297, 65537, 3, 589833, 65537, 3, 10, 65537, 3, 65546, 65537, 3, 131082, 65537, 3, 196618, 65537, 3, 262154, 65537, 3, 327690, 65537, 3, 393226, 65537, 3, 458762, 65537, 3, 524298, 65537, 3, 589834, 65537, 3, 11, 65537, 3, 65547, 65537, 3, 131083, 65537, 3, 196619, 65537, 3, 262155, 65537, 3, 327691, 65537, 3, 393227, 65537, 3, 458763, 65537, 3, 524299, 65537, 3, 589835, 65537, 3, 12, 65537, 3, 65548, 65537, 3, 131084, 65537, 3, 196620, 65537, 3, 262156, 65537, 3, 327692, 65537, 3, 393228, 65537, 3, 458764, 65537, 3, 524300, 65537, 3, 589836, 65537, 3, 13, 65537, 3, 65549, 65537, 3, 131085, 65537, 3, 196621, 65537, 3, 262157, 65537, 3, 327693, 65537, 3, 393229, 65537, 3, 458765, 65537, 3, 524301, 65537, 3, 589837, 65537, 3, 14, 65537, 3, 65550, 65537, 3, 131086, 65537, 3, 196622, 65537, 3, 262158, 65537, 3, 327694, 65537, 3, 393230, 65537, 3, 458766, 65537, 3, 524302, 65537, 3, 589838, 65537, 3, 15, 65537, 3, 65551, 65537, 3, 131087, 65537, 3, 196623, 65537, 3, 262159, 65537, 3, 327695, 65537, 3, 393231, 65537, 3, 458767, 65537, 3, 524303, 65537, 3, 589839, 65537, 3)
+layer_2/name = "dat"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "deco"
+layer_3/enabled = true
+layer_3/modulate = Color(1, 1, 1, 1)
+layer_3/y_sort_enabled = false
+layer_3/y_sort_origin = 0
+layer_3/z_index = 10
+layer_3/tile_data = PackedInt32Array()
+script = ExtResource("4_f76jk")
+
+[node name="Wizard" parent="." instance=ExtResource("5_gjres")]
+position = Vector2(90, 270)
+
+[node name="ExitEffect" parent="." instance=ExtResource("6_gab5q")]
+position = Vector2(930, 270)
+
+[node name="Decos" type="Node2D" parent="."]
+z_index = -20
+
+[node name="WhiteFlowers" type="Sprite2D" parent="Decos"]
+position = Vector2(210, 390)
+texture = ExtResource("12_acmob")
+
+[node name="OrangeFlower" type="Sprite2D" parent="Decos"]
+position = Vector2(390, 330)
+texture = ExtResource("13_o1akx")
+
+[node name="WhiteFlowers2" type="Sprite2D" parent="Decos"]
+position = Vector2(540, 150)
+texture = ExtResource("12_acmob")
+
+[node name="OrangeFlower2" type="Sprite2D" parent="Decos"]
+position = Vector2(780, 210)
+texture = ExtResource("13_o1akx")
+
+[node name="WhiteFlowers3" type="Sprite2D" parent="Decos"]
+position = Vector2(840, 510)
+texture = ExtResource("12_acmob")
+
+[node name="WhiteFlowers6" type="Sprite2D" parent="Decos"]
+position = Vector2(60, 420)
+texture = ExtResource("12_acmob")
+
+[node name="Bigrock" type="Node2D" parent="."]
+position = Vector2(810, 330)
+script = ExtResource("7_jxqc8")
+strength = 0
+weight = 3
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Bigrock"]
+texture = ExtResource("8_qnkb0")
+
+[node name="Smallrock" type="Node2D" parent="."]
+z_index = 5
+position = Vector2(450, 150)
+script = ExtResource("7_jxqc8")
+strength = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Smallrock"]
+texture = ExtResource("9_83hab")
+
+[node name="Smallrock2" parent="." instance=ExtResource("10_nfge0")]
+z_index = 5
+position = Vector2(270, 330)
+
+[node name="Smallrock3" type="Node2D" parent="."]
+z_index = 5
+position = Vector2(630, 270)
+script = ExtResource("7_jxqc8")
+strength = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Smallrock3"]
+texture = ExtResource("9_83hab")
+
+[node name="Smallrock4" type="Node2D" parent="."]
+position = Vector2(450, 270)
+script = ExtResource("7_jxqc8")
+strength = 0
+weight = 3
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Smallrock4"]
+texture = ExtResource("8_qnkb0")
+
+[node name="Smallrock5" type="Node2D" parent="."]
+z_index = 5
+position = Vector2(330, 270)
+script = ExtResource("7_jxqc8")
+strength = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Smallrock5"]
+texture = ExtResource("9_83hab")
+
+[node name="Smallrock6" type="Node2D" parent="."]
+z_index = 5
+position = Vector2(570, 390)
+script = ExtResource("7_jxqc8")
+strength = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Smallrock6"]
+texture = ExtResource("9_83hab")
+
+[node name="Smallrock7" type="Node2D" parent="."]
+z_index = 5
+position = Vector2(690, 270)
+script = ExtResource("7_jxqc8")
+strength = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Smallrock7"]
+texture = ExtResource("9_83hab")
+
+[node name="Smallrock8" parent="." instance=ExtResource("10_nfge0")]
+z_index = 5
+position = Vector2(270, 390)
+
+[node name="Smallrock9" parent="." instance=ExtResource("10_nfge0")]
+z_index = 5
+position = Vector2(150, 210)
+
+[node name="Bigrock2" type="Node2D" parent="."]
+position = Vector2(750, 390)
+script = ExtResource("7_jxqc8")
+strength = 0
+weight = 3
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Bigrock2"]
+texture = ExtResource("8_qnkb0")
+
+[node name="Spike" parent="." instance=ExtResource("11_ajnme")]
+position = Vector2(690, 390)
+
+[node name="Spike2" parent="." instance=ExtResource("11_ajnme")]
+position = Vector2(210, 270)
+
+[node name="Spike3" parent="." instance=ExtResource("11_ajnme")]
+position = Vector2(330, 390)
+
+[node name="Smallrock10" parent="." instance=ExtResource("10_nfge0")]
+z_index = 5
+position = Vector2(510, 270)
+
+[node name="Smallrock11" parent="." instance=ExtResource("10_nfge0")]
+z_index = 5
+position = Vector2(630, 210)
+
+[node name="Spike4" parent="." instance=ExtResource("11_ajnme")]
+position = Vector2(450, 150)
+
+[node name="Spike5" parent="." instance=ExtResource("11_ajnme")]
+position = Vector2(330, 270)
+
+[node name="Spike6" parent="." instance=ExtResource("11_ajnme")]
+position = Vector2(510, 330)
+
+[node name="Spike7" parent="." instance=ExtResource("11_ajnme")]
+position = Vector2(690, 270)
+
+[node name="Spike8" parent="." instance=ExtResource("11_ajnme")]
+position = Vector2(630, 210)

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://by5sn8c63324n"
+path="res://.godot/imported/dialog_flowerpot.dialogue-2d788b644c8e458d56a37029136c40e0.tres"
+
+[deps]
+
+source_file="res://resources/dialogs/dialog_flowerpot.dialogue"
+dest_files=["res://.godot/imported/dialog_flowerpot.dialogue-2d788b644c8e458d56a37029136c40e0.tres"]
+
+[params]
+
+defaults=true

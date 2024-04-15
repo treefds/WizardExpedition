@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://gqjc4ppwj6p6"]
+
+[ext_resource type="Texture2D" uid="uid://bhn54a1ulyvl4" path="res://shaders/particle_pixel.png" id="1_wcck3"]
+
+[sub_resource type="Curve" id="Curve_038td"]
+_data = [Vector2(0.194128, 0.955276), 0.0, 0.0, 0, 0, Vector2(0.858229, 0.425885), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_m7rsf"]
+offsets = PackedFloat32Array(0, 0.708609, 1)
+colors = PackedColorArray(1, 1, 1, 0.819608, 1, 1, 1, 0.552941, 1, 1, 1, 0)
+
+[node name="SummoningParticle" type="CPUParticles2D"]
+texture_filter = 1
+position = Vector2(0, 51)
+amount = 4
+texture = ExtResource("1_wcck3")
+emission_shape = 3
+emission_rect_extents = Vector2(24, 2)
+direction = Vector2(-1, 0)
+spread = 90.0
+gravity = Vector2(0, -60)
+initial_velocity_max = 12.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+radial_accel_max = 22.22
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_038td")
+color_ramp = SubResource("Gradient_m7rsf")
