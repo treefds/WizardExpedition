@@ -2,7 +2,7 @@
 
 Source code for _A Wizard's Spring Hike_, a Sokoban-inspired puzzle game made in 72 hours for [Ludum Dare 55 game jam](https://ldjam.com/events/ludum-dare/55/a-wizards-spring-hike) (theme: Summoning). 
 
-This was my first ever game jam submission. Due to the 72h deadline, the game is rather rushed and unpolished (espeically towards the end), and several ideas I had didn't made it to the final submission. 
+This was my first ever game jam submission. Due to the 72h deadline, the game was rather rushed and unpolished (espeically towards the end), and several ideas I had didn't make it to the final submission. 
 This repository includes several post-deadline bugfixes, but no new features are added. 
 
 ##### Credits
