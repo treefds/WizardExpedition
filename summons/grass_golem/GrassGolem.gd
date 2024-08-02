@@ -24,15 +24,21 @@ func _unhandled_input(event):
 		return
 	if event is InputEvent:
 		var success
+		var is_movement = false
 		if event.is_action_pressed("move_up"):
 			success = try_and_move("up")
+			is_movement = true
 		elif event.is_action_pressed("move_down"):
 			success = try_and_move("down")
+			is_movement = true
 		elif event.is_action_pressed("move_left"):
 			success = try_and_move("left")
+			is_movement = true
 		elif event.is_action_pressed("move_right"):
 			success = try_and_move("right")
-		Global.Holder.play_walk()
+			is_movement = true
+		if success != PRET.FAIL and is_movement:
+			Global.Holder.play_walk()
 		if success == PRET.PUSH:
 			grow_tired()
 

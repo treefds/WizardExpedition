@@ -18,7 +18,6 @@ func _on_button_core_update(toggle):
 
 func _reset_button_core():
 	$ButtonCore.set_pressed_no_signal(false)
-	print(Global.vacant_summon_slot)
 	if Global.vacant_summon_slot == 0:
 		$ButtonCore.disabled = true
 	else:

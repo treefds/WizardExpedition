@@ -461,7 +461,8 @@ offset_bottom = 43.5
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_k57tb")
 theme_override_font_sizes/font_size = 32
-text = "0-1"
+text = "2-8
+"
 horizontal_alignment = 1
 
 [node name="TextureButton17" type="TextureButton" parent="."]
@@ -489,7 +490,7 @@ offset_bottom = 43.5
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_k57tb")
 theme_override_font_sizes/font_size = 32
-text = "2-1"
+text = "3-1"
 horizontal_alignment = 1
 
 [node name="TextureButton18" type="TextureButton" parent="."]
@@ -517,7 +518,7 @@ offset_bottom = 43.5
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_k57tb")
 theme_override_font_sizes/font_size = 32
-text = "2-2"
+text = "3-2"
 horizontal_alignment = 1
 
 [node name="TextureButton19" type="TextureButton" parent="."]

@@ -24,6 +24,8 @@ func page_left():
 
 func page_right():
 	current_page = min(len(list_of_pages) - 1, current_page + 1)
+	if current_page == 3 and Global.game_progress < 141:
+		current_page = 2
 	for page in list_of_pages:
 		page.visible = false
 	list_of_pages[current_page].visible = true

@@ -108,8 +108,9 @@ func wizard_try_and_move(direction: String) -> PRET:
 
 
 func die():
-	dead = true
-	var timer = get_tree().create_timer(1.2)
-	await timer.timeout
-	Global.request_level_restart.emit()
+	if not dead:
+		dead = true
+		var timer = get_tree().create_timer(1.2)
+		await timer.timeout
+		Global.request_level_restart.emit()
 

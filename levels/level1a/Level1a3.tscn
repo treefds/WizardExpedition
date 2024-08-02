@@ -177,3 +177,6 @@ texture = ExtResource("10_bnyx5")
 [node name="WhiteFlowers2" type="Sprite2D" parent="."]
 position = Vector2(510, 210)
 texture = ExtResource("10_bnyx5")
+
+[node name="Smallrock8" parent="." instance=ExtResource("8_pgi24")]
+position = Vector2(210, 450)
